@@ -6,6 +6,8 @@ pipeline {
         stage('firststage') {
           steps {
             echo 'first-stage'
+            bat(script: 'timeout /t 5', returnStatus: true)
+            bat(script: 'echo Success !', returnStdout: true)
           }
         }
         stage('first-parallel-stage') {
