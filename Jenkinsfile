@@ -6,8 +6,8 @@ pipeline {
         stage('firststage') {
           steps {
             echo 'first-stage'
-            bat 'ping -n 10 127.0.0.1'
-            bat 'echo Success !'
+            bat(script: 'ping -n 10 127.0.0.1', returnStatus: true, returnStdout: true)
+            bat(script: 'echo Success !', returnStatus: true, returnStdout: true)
           }
         }
         stage('first-parallel-stage') {
