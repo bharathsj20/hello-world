@@ -6,7 +6,7 @@ pipeline {
         stage('firststage') {
           steps {
             echo 'first-stage'
-            bat(script: 'timeout /t 5', returnStdout: true)
+            bat(script: 'ping -n 10 127.0.0.1', returnStdout: true)
             bat(script: 'echo Success !', returnStdout: true)
           }
         }
